@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 class Transaction {
   id: string;
@@ -10,7 +10,7 @@ class Transaction {
   type: 'income' | 'outcome';
 
   constructor({ title, value, type }: Omit<Transaction, 'id'>) {
-    this.id = uuid();
+    this.id = uuidv4();
     this.title = title;
     this.value = value;
     this.type = type;
